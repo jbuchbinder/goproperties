@@ -102,6 +102,15 @@ func Load(file string) (Properties, error) {
 	return p, nil
 }
 
+// Creates an instance of Properties and try to fill it with data from reader.
+func LoadFromReader(src io.Reader) (Properties, error) {
+	p := make(Properties)
+	if err := p.Load(src); err != nil {
+		return p, err
+	}
+	return p, nil
+}
+
 // Uses strconv to convert key's value to bool. Returns def if
 // conversion failed or key does not exist.
 func (p Properties) Bool(key string, def bool) bool {

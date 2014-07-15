@@ -32,7 +32,7 @@ import (
 func Test(t *testing.T) { TestingT(t) }
 
 type PropertiesSuite struct {
-	p       Properties
+	p Properties
 }
 
 var _ = Suite(&PropertiesSuite{})
